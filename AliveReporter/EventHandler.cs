@@ -14,7 +14,8 @@ namespace AliveReporter
         private void InitCassie()
         {
             List<Player> players = Player.List.ToList();
-            //string cassieText = ;
+            string cassieText = "";
+            string translatedText = "";
 
             int DClass = 0;
             int scientists = 0;
@@ -23,17 +24,51 @@ namespace AliveReporter
             int CIs = 0;
             int SCPs = 0;
 
+            Player savedPlayer = players[0];
+
             foreach (var player in players)
             {
                 if (player.Role == RoleTypeId.ClassD && Plugin.Instance.Config.ReportDclass) DClass++;
-                if (player.Role == RoleTypeId.Scientist && Plugin.Instance.Config.ReportScientist) scientists++;
-                if (player.Role == RoleTypeId.FacilityGuard && Plugin.Instance.Config.ReportGuard) guards++;
-                if (player.IsNTF && Plugin.Instance.Config.ReportNtf) NTFs++;
-                if (player.IsCHI && Plugin.Instance.Config.ReportCi) CIs++;
-                if (player.IsScp && Plugin.Instance.Config.ReportScp) SCPs++;
+                else if (player.Role == RoleTypeId.Scientist && Plugin.Instance.Config.ReportScientist) scientists++;
+                else if (player.Role == RoleTypeId.FacilityGuard && Plugin.Instance.Config.ReportGuard) guards++;
+                else if (player.IsNTF && Plugin.Instance.Config.ReportNtf) NTFs++;
+                else if (player.IsCHI && Plugin.Instance.Config.ReportCi) CIs++;
+                else if (player.IsScp && Plugin.Instance.Config.ReportScp) SCPs++;
             }
+
+            if (DClass > 0)
+            {
+                cassieText += (DClass + " D Class");
+                translatedText += (DClass + " D-Class ");
+            }
+            if (scientists > 0)
+            {
+                cassieText += (scientists + " scientists");
+                translatedText += (scientists + " scientists ");
+            }
+            if (guards > 0) {
+                cassieText += (guards + " guards");
+                translatedText += (guards + " guards ");
+            }
+            if (NTFs > 0) {
+                cassieText += (NTFs + " N T F operators");
+                translatedText += (NTFs + " NTF operators ");
+            }
+            if (CIs > 0) {
+                cassieText += (CIs + " Chaos operators");
+                translatedText += (CIs + " Chaos operators ");
+            }
+            if (SCPs > 0) {
+                cassieText += (SCPs + " SCPs");
+                translatedText += (SCPs + " SCPs ");
+            }
+
+            var originText = Plugin.Instance.Config.CassieText;
+            var speakText = originText.Replace("$Info$", cassieText);
+            var translated = originText.Replace("$Info$", translatedText);
             
-            //if (DClass > 0) cassieText += 
+            Cassie.MessageTranslated(speakText, translated);
+            
         }
 
         private IEnumerator<float> CoroutineTimer()

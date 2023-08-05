@@ -17,12 +17,12 @@ namespace AliveReporter
         public bool ReportScp { get; set; } = true;
 
         [Description("Time interval between reports in seconds")]
-        public float ReportTimer { get; set; } = 300f;
+        public float ReportTimer { get; set; } = 60f;
 
         [Description("CASSIE report at the start of the round")]
         public bool ReportOnStart { get; set; } = true;
 
         [Description("Text that CASSIE will say")]
-        public string CassieText { get; set; } = "Personnel Report . . . <color=red> $AliveCounts$ </color>";
+        public string CassieText { get; set; } = "Personnel Report . . . $Info$ . . .";
     }
 }
