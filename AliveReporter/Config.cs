@@ -17,7 +17,7 @@ namespace AliveReporter
         public bool ReportScp { get; set; } = true;
 
         [Description("Time interval between reports in seconds")]
-        public float ReportTimer { get; set; } = 60f;
+        public float ReportTimer { get; set; } = 300f;
 
         [Description("CASSIE report at the start of the round")]
         public bool ReportOnStart { get; set; } = true;
