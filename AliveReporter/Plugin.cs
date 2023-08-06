@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Exiled.API.Features;
@@ -12,6 +13,7 @@ namespace AliveReporter
     {
         public override string Author => "DrBright";
         public override string Name => "AliveReporter";
+        public override Version Version => new Version("0.1.0");
 
         public override string Prefix => Name;
 

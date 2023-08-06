@@ -19,10 +19,10 @@ namespace AliveReporter
         [Description("Time interval between reports in seconds")]
         public float ReportTimer { get; set; } = 300f;
 
-        [Description("CASSIE report at the start of the round")]
+        [Description("CASSIE report at the start of the round (May cause conflict if cassie is called by another plugin)")]
         public bool ReportOnStart { get; set; } = true;
 
         [Description("Text that CASSIE will say")]
-        public string CassieText { get; set; } = "Personnel Report . . . $Info$ . . .";
+        public string CassieText { get; set; } = "Personnel Report . . . <color=red> $Info$ </color> . . .";
     }
 }
