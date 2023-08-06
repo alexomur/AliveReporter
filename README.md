@@ -2,7 +2,7 @@
 EXILED SCP:SL Plugin which report at regular intervals about the presence of personnel, operators and SCPs in the facility.
 
 # Pay attantion!
-Plugin 
+The plugin is currently under development. There may be bugs and errors. Please report to `Issues` if you find a problem.
 
 # Config
 ```
