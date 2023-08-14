@@ -38,28 +38,28 @@ namespace AliveReporter
 
             if (DClass > 0)
             {
-                cassieText += (DClass + " D Class");
+                cassieText += (DClass + " D Class ");
                 translatedText += (DClass + " D-Class ");
             }
             if (scientists > 0)
             {
-                cassieText += (scientists + " scientists");
+                cassieText += (scientists + " scientists ");
                 translatedText += (scientists + " scientists ");
             }
             if (guards > 0) {
-                cassieText += (guards + " guards");
+                cassieText += (guards + " guards ");
                 translatedText += (guards + " guards ");
             }
             if (NTFs > 0) {
-                cassieText += (NTFs + " N T F operators");
+                cassieText += (NTFs + " N T F operators ");
                 translatedText += (NTFs + " NTF operators ");
             }
             if (CIs > 0) {
-                cassieText += (CIs + " Chaos operators");
+                cassieText += (CIs + " Chaos operators ");
                 translatedText += (CIs + " Chaos operators ");
             }
             if (SCPs > 0) {
-                cassieText += (SCPs + " SCPs");
+                cassieText += (SCPs + " SCPs ");
                 translatedText += (SCPs + " SCPs ");
             }
 
