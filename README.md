@@ -1,3 +1,5 @@
+# OUTDATED
+
 # AliveReporter
 EXILED SCP:SL Plugin which report at regular intervals about the presence of personnel, operators and SCPs in the facility.
 
